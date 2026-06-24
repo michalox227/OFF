@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GO ON [OFF] SHORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#front" aria-label="GO ON OFF SHORE — strona główna">
+      <span class="brand-off">[OFF]</span>
+    </a>
+    <nav class="nav" aria-label="Menu projektu">
+      <a href="#business">Biznes Plan</a>
+      <a href="#presentation">Prezentacja</a>
+      <a href="#roadmap">Road Mapa</a>
+      <a href="#accounts">Konta &amp; Funkcje</a>
+      <a href="#organization">Organizacja &amp; Zespół</a>
+      <a href="#settings">Ustawienia</a>
+    </nav>
+  </header>
+
+  <main id="front" class="page front-page active">
+    <section class="front-hero">
+      <h1>GO ON <span class="off">[OFF]</span> SHORE</h1>
+      <p>Marketplace &amp; Centrum Spraw dla sektorów offshore, onshore i podwyższonego ryzyka.</p>
+      <div class="front-actions">
+        <a class="pill primary" href="#settings">Otwórz Ustawienia CRM</a>
+        <a class="pill" href="#accounts">Konta &amp; Funkcje</a>
+      </div>
+    </section>
+  </main>
+
+  <main id="business" class="page standard-page">
+    <div class="section-shell">
+      <div class="section-kicker">Biznes Plan</div>
+      <h2 class="section-title">Konfigurowalny biznes plan projektu GO ON [OFF] SHORE.</h2>
+      <p class="section-lead">Treści tej podstrony będą generowane z modułu Ustawienia → Biznes Plan.</p>
+      <div id="businessPreview" class="render-zone"></div>
+    </div>
+  </main>
+
+  <main id="presentation" class="page standard-page">
+    <div class="section-shell">
+      <div class="section-kicker">Prezentacja</div>
+      <h2 class="section-title">Slajdy i wizualizacje prezentacji inwestorskiej.</h2>
+      <p class="section-lead">Każdy slajd może mieć temat przewodni oraz osobny kod wizualizacji wklejany w ustawieniach.</p>
+      <div id="presentationPreview" class="slide-preview-grid"></div>
+    </div>
+  </main>
+
+  <main id="roadmap" class="page standard-page">
+    <div class="section-shell">
+      <div class="section-kicker">Road Mapa</div>
+      <h2 class="section-title">Wersje platformy, kwartały, cele i zespół.</h2>
+      <p class="section-lead">Road mapa jest budowana z wersji platformy oraz przypisanych do nich Q.</p>
+      <div id="roadmapPreview" class="roadmap-preview"></div>
+    </div>
+  </main>
+
+  <main id="accounts" class="page accounts-page">
+    <aside class="accounts-sidebar">
+      <div class="sidebar-label">Rodzaje kont</div>
+      <button class="side-account active" data-account-view="Konto Użytkownika">Konto Użytkownika</button>
+      <button class="side-account" data-account-view="Konto Firmy">Konto Firmy</button>
+      <button class="side-account" data-account-view="Konto Partnera">Konto Partnera</button>
+    </aside>
+    <section class="accounts-main">
+      <div class="section-kicker">Konta &amp; Funkcje</div>
+      <h2 class="section-title small">Funkcje przypisane do kont i start prac w Q.</h2>
+      <p class="section-lead">Funkcje dodajesz w module Ustawienia → Konta &amp; Funkcje. Każda funkcja ma opis oraz przypisany kwartał startu prac.</p>
+      <div id="accountsPreview" class="function-grid"></div>
+    </section>
+  </main>
+
+  <main id="organization" class="page standard-page">
+    <div class="section-shell">
+      <div class="section-kicker">Organizacja &amp; Zespół</div>
+      <h2 class="section-title">Struktura organizacyjna wynikająca z Road Mapy.</h2>
+      <p class="section-lead">Role i działy mogą być uzupełniane ręcznie albo wynikać z osób zatrudnianych w poszczególnych Q.</p>
+      <div id="organizationPreview" class="org-grid"></div>
+    </div>
+  </main>
+
+  <main id="settings" class="page settings-page">
+    <aside class="settings-menu">
+      <div class="sidebar-label">Ustawienia CRM</div>
+      <button class="settings-tab active" data-settings-tab="businessPlan">Biznes Plan</button>
+      <button class="settings-tab" data-settings-tab="presentation">Prezentacja</button>
+      <button class="settings-tab" data-settings-tab="roadmap">Road Mapa</button>
+      <button class="settings-tab" data-settings-tab="accounts">Konta &amp; Funkcje</button>
+      <button class="settings-tab" data-settings-tab="organization">Organizacja &amp; Zespół</button>
+    </aside>
+
+    <section class="settings-workspace">
+      <div class="settings-panel active" id="settings-businessPlan">
+        <div class="settings-head">
+          <div><div class="section-kicker">CRM / Formularz</div><h2>Biznes Plan</h2><p>Dodawaj tytuły, podtytuły, teksty oraz konfigurowalne tabelki.</p></div>
+          <button class="action primary" id="addBusinessSection">+ Dodaj blok</button>
+        </div>
+        <div id="businessEditor" class="editor-stack"></div>
+      </div>
+
+      <div class="settings-panel" id="settings-presentation">
+        <div class="settings-head">
+          <div><div class="section-kicker">CRM / Formularz</div><h2>Prezentacja</h2><p>Podgląd slajdów, temat przewodni i pole do wklejenia kodu wizualizacji.</p></div>
+          <button class="action primary" id="addSlide">+ Dodaj slajd</button>
+        </div>
+        <div id="presentationEditor" class="editor-stack"></div>
+      </div>
+
+      <div class="settings-panel" id="settings-roadmap">
+        <div class="settings-head">
+          <div><div class="section-kicker">CRM / Formularz</div><h2>Road Mapa</h2><p>Twórz wersje platformy i dziel każdą wersję na wybrane Q.</p></div>
+          <button class="action primary" id="addVersion">+ Dodaj wersję</button>
+        </div>
+        <div id="roadmapEditor" class="editor-stack"></div>
+      </div>
+
+      <div class="settings-panel" id="settings-accounts">
+        <div class="settings-head">
+          <div><div class="section-kicker">CRM / Formularz</div><h2>Konta &amp; Funkcje</h2><p>Dodawaj funkcje do kont i przypisuj Q rozpoczęcia prac.</p></div>
+          <button class="action primary" id="addAccountFunction">+ Dodaj funkcję</button>
+        </div>
+        <div id="accountsEditor" class="editor-stack"></div>
+      </div>
+
+      <div class="settings-panel" id="settings-organization">
+        <div class="settings-head">
+          <div><div class="section-kicker">CRM / Formularz</div><h2>Organizacja &amp; Zespół</h2><p>Moduł do zarządzania działami, rolami i strukturą zespołu.</p></div>
+          <button class="action primary" id="addOrgRole">+ Dodaj rolę</button>
+        </div>
+        <div id="organizationEditor" class="editor-stack"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
